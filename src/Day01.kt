@@ -1,17 +1,10 @@
 fun main() {
     fun part1(input: List<Int>): Int {
-        var result = 0
-        var previous = input.first()
-        for (num in input) {
-            result += if (num > previous) 1 else 0
-            previous = num
-        }
-        return result
+        return input.zipWithNext().count { it.second > it.first }
     }
 
     fun part2(input: List<Int>): Int {
-        val summedInput = input.windowed(3) { it.sum() }
-        return part1(summedInput)
+        return part1(input.windowed(3) { it.sum() })
     }
 
     val testInput = readInputInt("Day01_test")
