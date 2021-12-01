@@ -1,17 +1,24 @@
 fun main() {
-    fun part1(input: List<String>): Int {
-        return input.size
+    fun part1(input: List<Int>): Int {
+        var result = 0
+        var previous = input.first()
+        for (num in input) {
+            result += if (num > previous) 1 else 0
+            previous = num
+        }
+        return result
     }
 
-    fun part2(input: List<String>): Int {
-        return input.size
+    fun part2(input: List<Int>): Int {
+        val summedInput = input.windowed(3) { it.sum() }
+        return part1(summedInput)
     }
 
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
+    val testInput = readInputInt("Day01_test")
+    check(part1(testInput) == 7)
+    check(part2(testInput) == 5)
 
-    val input = readInput("Day01")
-    println(part1(input))
-    println(part2(input))
+    val input = readInputInt("Day01")
+    println("PART 1: " + part1(input))
+    println("PART 2: " + part2(input))
 }
