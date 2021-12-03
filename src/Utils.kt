@@ -14,8 +14,8 @@ fun readInputInt(name: String) = File("src", "$name.txt").readLines().map { it.t
  */
 fun String.md5(): String = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteArray())).toString(16)
 
-fun binToDec(num: Long): Int {
-    var num = num
+fun binToDec(num: Int): Int {
+    var num = num.toLong()
     var decimalNumber = 0
     var i = 0
     var remainder: Long
@@ -27,4 +27,8 @@ fun binToDec(num: Long): Int {
         ++i
     }
     return decimalNumber
+}
+
+fun binToDec(input: String): Int {
+    return Integer.parseInt(input, 2)
 }

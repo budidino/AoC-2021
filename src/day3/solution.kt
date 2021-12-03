@@ -4,9 +4,9 @@ fun main() {
         val numbers = input.count().toDouble()
         var sums = IntArray(len)
 
-        for (i in 0..(len-1)) {
+        for (i in 0 until len) {
             for (row in input) {
-                val num = row.get(i).digitToInt()
+                val num = row[i].digitToInt()
                 sums[i] += num
             }
         }
@@ -18,28 +18,28 @@ fun main() {
             epsilonBinary += if (n/numbers >= 0.5) "0" else "1"
         }
 
-        return binToDec(gammaBinary.toLong()) * binToDec(epsilonBinary.toLong())
+        return binToDec(gammaBinary) * binToDec(epsilonBinary)
     }
 
     fun returnDominantBinaryAtIndex(index: Int, list: List<String>): String {
         var sum = 0.0
         for (row in list) {
-            sum += row.get(index).digitToInt()
+            sum += row[index].digitToInt()
         }
         return if (sum/list.count() >= 0.5) "1" else "0"
     }
 
-    fun returnBinary(input: List<String>, isDominant: Boolean = true): Long {
+    fun returnBinary(input: List<String>, isDominant: Boolean = true): String {
         var list = input
-        for (i in 0..(list[0].length - 1)) {
+        for (i in 0 until list[0].length) {
             val dominant = returnDominantBinaryAtIndex(i, list).single()
-            list = list.filter { if (isDominant) it.get(i) == dominant else it.get(i) != dominant }
+            list = list.filter { if (isDominant) it[i] == dominant else it[i] != dominant }
 
             if (list.count() == 1) {
-                return list.first().toLong()
+                return list.first()
             }
         }
-        return 0
+        return "0"
     }
 
     fun part2(input: List<String>): Int {
