@@ -1,13 +1,13 @@
 fun main() {
 
     fun solve(input: List<Int>, days: Int): Long {
-        var fishes: MutableList<Long> = MutableList(9) {0}
+        val fishes: MutableList<Long> = MutableList(9) {0}
         for (num in input) {
             fishes[num] += 1.toLong()
         }
 
         for (i in 0 until days) {
-            var fishesToAdd = fishes[0]
+            val fishesToAdd = fishes[0]
             fishes.removeAt(0)
             fishes.add(fishesToAdd)
             fishes[6] += fishesToAdd

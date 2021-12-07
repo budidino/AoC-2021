@@ -1,6 +1,6 @@
 fun main() {
 
-    class Bingo() {
+    class Bingo {
         var remainingNumbers = mutableSetOf<Int>()
         var rows = mutableListOf<MutableSet<Int>>()
         var isCompleted = false
@@ -43,11 +43,11 @@ fun main() {
     }
 
     fun solve(input: List<String>, findFirst: Boolean = true): Int {
-        var boards: MutableList<Bingo> = ArrayList()
+        val boards: MutableList<Bingo> = ArrayList()
         val draw = input[0].split(",").map { it.toInt() }
 
         // construct bingo boards
-        var numbers = mutableSetOf<Int>()
+        val numbers = mutableSetOf<Int>()
         for (i in 2 until input.count()) {
             val row = input[i].trim().replace("  ", " ").split(" ")
             if (row.count() == 1) {

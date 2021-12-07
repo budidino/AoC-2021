@@ -1,19 +1,13 @@
 fun main() {
 
-    class Instruction() {
-        var startX = 0
-        var startY = 0
-        var endX = 0
-        var endY = 0
-        var isStraight = false
-    }
+    class Instruction(var startX: Int = 0, var startY: Int = 0, var endX: Int = 0, var endY: Int = 0, var isStraight: Boolean = false)
 
     fun solve(input: List<String>, onlyStraight: Boolean = true): Int {
-        var matrix = Array(999) {Array(999) {0} }
-        var instructions: MutableList<Instruction> = ArrayList()
+        val matrix = Array(999) {Array(999) {0} }
+        val instructions: MutableList<Instruction> = ArrayList()
         for (row in input) {
             val commands = row.split(" -> ")
-            var instruction = Instruction()
+            val instruction = Instruction()
 
             val startSplit = commands[0].split(",")
             instruction.startX = startSplit[0].toInt()

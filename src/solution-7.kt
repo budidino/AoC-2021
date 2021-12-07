@@ -5,7 +5,7 @@ fun main() {
     }
 
     fun solve(input: List<Int>, growingConsumption: Boolean = false): Int {
-        var solutions = mutableSetOf<Int>()
+        val solutions = mutableSetOf<Int>()
         for (destinationX in input.minOf { it } .. input.maxOf { it }) {
             var fuel = 0
             for (x in input) {

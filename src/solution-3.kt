@@ -2,7 +2,7 @@ fun main() {
     fun part1(input: List<String>): Int {
         val len = input[0].length
         val numbers = input.count().toDouble()
-        var sums = IntArray(len)
+        val sums = IntArray(len)
 
         for (i in 0 until len) {
             for (row in input) {
