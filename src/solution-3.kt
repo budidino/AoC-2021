@@ -46,11 +46,11 @@ fun main() {
         return binToDec(returnBinary(input)) * binToDec(returnBinary(input, false))
     }
 
-    val testInput = readInput("day3/test")
+    val testInput = readInput("test-3")
     check(part1(testInput) == 198)
     check(part2(testInput) == 230)
 
-    val input = readInput("day3/input")
+    val input = readInput("input-3")
     println("PART 1: " + part1(input))
     println("PART 2: " + part2(input))
 }

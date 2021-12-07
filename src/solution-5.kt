@@ -55,11 +55,11 @@ fun main() {
         return result
     }
 
-    val testInput = readInput("day5/test")
+    val testInput = readInput("test-5")
     check(solve(testInput) == 5)
     check(solve(testInput, false) == 12)
 
-    val input = readInput("day5/input")
+    val input = readInput("input-5")
     println("PART 1: " + solve(input))
     println("PART 2: " + solve(input, false))
 }

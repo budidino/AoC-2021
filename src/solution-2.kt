@@ -33,11 +33,11 @@ fun main() {
         return x * y
     }
 
-    val testInput = readInput("day2/test")
+    val testInput = readInput("test-2")
     check(part1(testInput) == 150)
     check(part2(testInput) == 900)
 
-    val input = readInput("day2/input")
+    val input = readInput("input-2")
     println("PART 1: " + part1(input))
     println("PART 2: " + part2(input))
 }

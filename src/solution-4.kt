@@ -78,11 +78,11 @@ fun main() {
         return 0
     }
 
-    val testInput = readInput("day4/test")
+    val testInput = readInput("test-4")
     check(solve(testInput) == 4512)
     check(solve(testInput, false) == 1924)
 
-    val input = readInput("day4/input")
+    val input = readInput("input-4")
     println("PART 1: " + solve(input))
     println("PART 2: " + solve(input, false))
 }
